@@ -345,8 +345,10 @@ img {
 
 .header_name {
     display: block;
+    margin-top: calc(1.5em - 6pt);
     color: var(--name_font);
-    font-size: calc(1.5em - 3pt);
+    font-size: calc(1.5em - 6pt);
+    font-weight: 700;
 }
 
 .header_job {
