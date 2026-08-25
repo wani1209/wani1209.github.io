@@ -17,12 +17,13 @@
       </ul>
       {% endif %}
       {% assign category_pages = site.pages | where_exp: "page", "page.path contains 'categories/'" %}
-      {% assign top_category_pages = category_pages | where_exp: "page", "page.parent_category == nil" %}
+      {% assign top_category_pages = category_pages | where_exp: "page", "page.parent_category == nil or page.parent_category == ''" %}
       {% for category_page in top_category_pages %}
       {% assign cat_name = category_page.type %}
+      {% assign cat_link = category_page.permalink | default: category_page.url %}
       <ul class="nav_list">
         <li class="nav_item">
-          <a href="{{ category_page.url | relative_url }}" id="aa">{{ cat_name }}</a>
+          <a href="{{ cat_link | relative_url }}">{{ cat_name }}</a>
         </li>
       </ul>
       {% endfor %}
