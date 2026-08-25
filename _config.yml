@@ -21,8 +21,8 @@ cusdis:
 
 user:
   name: Wani
-  pic: /assets/img/cat.jpg
-  picAlt: "wani blog"
+  pic: /assets/img/profile.JPG
+  picAlt: "Wani blog"
   job: student
   aboutme: true # comment this out if you don't need the 'about' page.
 
