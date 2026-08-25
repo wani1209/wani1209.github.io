@@ -28,7 +28,14 @@
   {% if category_posts.size > 0 %}
   <ul class="archive_posts">
     {% for post in category_posts %}
-    {% if post.url %}
+    {% assign is_child_post = false %}
+    {% for child_page in category_pages %}
+    {% assign child_key = child_page.category_key | default: child_page.type %}
+    {% if post.categories contains child_key %}
+    {% assign is_child_post = true %}
+    {% endif %}
+    {% endfor %}
+    {% if post.url and is_child_post == false %}
     <li>
         <time class='archive_date' datetime='{{ post.date | date_to_xmlschema }}'>
           {{ post.date | date: "%b %-d, %Y" }}
