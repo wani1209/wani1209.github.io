@@ -10,6 +10,7 @@
   <a class="archive_parent_button" href="{{ parent_page.url | relative_url }}">&larr; {{ page.parent_category }}</a>
   {% endif %}
   <p class="archive_type">{{ page.type }}</p>
+  <div class="archive_sections">
   {% if category_pages.size > 0 %}
   <div class="archive_pages">
     <div class="archive_page_buttons">
@@ -42,6 +43,7 @@
     {% endfor %}
   </ul>
   {% endif %}
+  </div>
 </div>
 
 <!-- main page -->

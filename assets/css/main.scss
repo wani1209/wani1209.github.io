@@ -274,6 +274,11 @@ img {
     margin-bottom: 1rem;
 }
 
+.archive_sections {
+    display: flex;
+    flex-direction: column;
+}
+
 .archive_year {
     font-size: 1.2rem;
     margin-top: 1.4rem;
@@ -290,7 +295,12 @@ img {
 }
 
 .archive_pages {
+    order: 1;
     margin-top: 2rem;
+}
+
+.archive_posts {
+    order: 2;
 }
 
 .archive_pages_title {
