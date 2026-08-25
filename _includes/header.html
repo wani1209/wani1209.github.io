@@ -22,24 +22,9 @@
       {% assign cat_name = category_page.type %}
       {% assign category_key = category_page.category_key | default: cat_name %}
       {% assign category_posts = site.categories[category_key] %}
-      {% assign child_pages = category_pages | where: "parent_category", cat_name %}
       <ul class="nav_list">
-        <li class="nav_item{% if child_pages.size > 0 %} has_children{% endif %}">
+        <li class="nav_item">
           <a href="{{ category_page.url | relative_url }}" id="aa">{{ cat_name }} ({{ category_posts.size | default: 0 }})</a>
-          {% if child_pages.size > 0 %}
-          <details class="nav_children">
-            <summary aria-label="Show {{ cat_name }} subpages"></summary>
-            <ul class="nav_sublist">
-              {% for child_page in child_pages %}
-              {% assign child_key = child_page.category_key | default: child_page.type %}
-              {% assign child_posts = site.categories[child_key] %}
-              <li class="nav_item nav_subitem">
-                <a href="{{ child_page.url | relative_url }}">{{ child_page.type }} ({{ child_posts.size | default: 0 }})</a>
-              </li>
-              {% endfor %}
-            </ul>
-          </details>
-          {% endif %}
         </li>
       </ul>
       {% endfor %}
