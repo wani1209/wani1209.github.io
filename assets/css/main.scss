@@ -253,30 +253,42 @@ img {
 }
 
 .archive_date {
+    font-size: calc(1.8rem - 2pt);
     text-transform: uppercase;
 
     @include breakpoint(medium) {
         float: right;
     }
+
+    @include mobile-only {
+        font-size: calc(1.5rem - 2pt);
+    }
 }
 
 .archive_title {
     word-wrap: normal;
+    font-weight: 700;
+
     @include breakpoint(medium) {
         max-width: 80%;
     }
 }
 
 .archive_type {
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 1.8rem;
+    font-weight: 700;
     margin-left: .5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+
+    @include mobile-only {
+        font-size: 1.5rem;
+    }
 }
 
 .archive_sections {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
 }
 
 .archive_year {
@@ -296,8 +308,6 @@ img {
 
 .archive_pages {
     order: 1;
-    margin-top: 1rem;
-    margin-bottom: 8.5rem;
 }
 
 .archive_posts {
@@ -323,6 +333,15 @@ img {
     border: 1px solid var(--archive_title);
     border-radius: 4px;
     background: var(--content_bg);
+}
+
+.archive_page_button span {
+    font-size: 1.8rem;
+    font-weight: 700;
+
+    @include mobile-only {
+        font-size: 1.5rem;
+    }
 }
 
 .archive_page_button small {
@@ -463,6 +482,15 @@ img {
     & a {
         color: var(--nav_font);
         font-size: 90%;
+        font-weight: 700;
+
+        @include breakpoint(medium) {
+            font-size: 1.8rem;
+        }
+
+        @include mobile-only {
+            font-size: 1.5rem;
+        }
 
         &:hover,
         &:focus {
@@ -566,8 +594,13 @@ img {
 
 .post_date {
     color: var(--post_date);
+    font-size: calc(1.8rem - 2pt);
     letter-spacing: -0.5px;
     line-height: 1;
+
+    @include mobile-only {
+        font-size: calc(1.5rem - 2pt);
+    }
 }
 
 .post_categories {
