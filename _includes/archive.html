@@ -30,7 +30,6 @@
   {% endif %}
   {% if category_pages.size > 0 %}
   <div class="archive_pages">
-    <p class="archive_pages_title">Subpages</p>
     <div class="archive_page_buttons">
       {% for child_page in category_pages %}
       {% assign child_key = child_page.category_key | default: child_page.type %}
