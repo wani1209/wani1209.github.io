@@ -20,11 +20,9 @@
       {% assign top_category_pages = category_pages | where_exp: "page", "page.parent_category == nil" %}
       {% for category_page in top_category_pages %}
       {% assign cat_name = category_page.type %}
-      {% assign category_key = category_page.category_key | default: cat_name %}
-      {% assign category_posts = site.categories[category_key] %}
       <ul class="nav_list">
         <li class="nav_item">
-          <a href="{{ category_page.url | relative_url }}" id="aa">{{ cat_name }} ({{ category_posts.size | default: 0 }})</a>
+          <a href="{{ category_page.url | relative_url }}" id="aa">{{ cat_name }}</a>
         </li>
       </ul>
       {% endfor %}
