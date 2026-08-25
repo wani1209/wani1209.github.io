@@ -253,15 +253,11 @@ img {
 }
 
 .archive_date {
-    font-size: calc(1.8rem - 2pt);
+    font-size: 0.9rem;
     text-transform: uppercase;
 
     @include breakpoint(medium) {
         float: right;
-    }
-
-    @include mobile-only {
-        font-size: calc(1.5rem - 2pt);
     }
 }
 
@@ -336,12 +332,8 @@ img {
 }
 
 .archive_page_button span {
-    font-size: 1.8rem;
+    font-size: 1rem;
     font-weight: 700;
-
-    @include mobile-only {
-        font-size: 1.5rem;
-    }
 }
 
 .archive_page_button small {
@@ -481,16 +473,8 @@ img {
 
     & a {
         color: var(--nav_font);
-        font-size: 90%;
+        font-size: 1rem;
         font-weight: 700;
-
-        @include breakpoint(medium) {
-            font-size: 1.8rem;
-        }
-
-        @include mobile-only {
-            font-size: 1.5rem;
-        }
 
         &:hover,
         &:focus {
@@ -594,13 +578,9 @@ img {
 
 .post_date {
     color: var(--post_date);
-    font-size: calc(1.8rem - 2pt);
+    font-size: 0.9rem;
     letter-spacing: -0.5px;
     line-height: 1;
-
-    @include mobile-only {
-        font-size: calc(1.5rem - 2pt);
-    }
 }
 
 .post_categories {
