@@ -14,15 +14,15 @@
             theme = 'dark';
         }
 
-        if (window.matchMedia(`(prefers_color: dark)`).matches) {
+        if (window.matchMedia(`(prefers-color-scheme: dark)`).matches) {
             theme = hasLocalStorage ? hasLocalStorage : 'dark';
             supports = true;
         };
-        if (window.matchMedia(`(prefers_color: light)`).matches) {
+        if (window.matchMedia(`(prefers-color-scheme: light)`).matches) {
             theme = hasLocalStorage ? hasLocalStorage : 'light';
             supports = true;
         };
-        if (window.matchMedia(`(prefers_color: no-preference)`).matches) {
+        if (window.matchMedia(`(prefers-color-scheme: no-preference)`).matches) {
             theme = hasLocalStorage ? hasLocalStorage : 'none';
             supports = true;
         };
@@ -37,35 +37,30 @@
         console.clear();
 
         const userThemePreference = themePreference();
-        const toggle = document.querySelector('[theme_toggle]');
+        const toggles = document.querySelectorAll('[theme_toggle]');
         const html = document.documentElement;
 
-        const setTheme = () => {
-            switch (userThemePreference.theme) {
-                case 'dark':
-                    toggle.checked = true;
-                    html.classList.add('dark');
-                    html.classList.remove('light');
-                    break;
-                case 'light':
-                    toggle.checked = false;
-                    html.classList.remove('dark');
-                    html.classList.add('light');
-                    break;
-            }
-        }
-        setTheme();
-        toggle.addEventListener('click', e => {
-            if (toggle.checked) {
+        const setTheme = theme => {
+            html.classList.toggle('dark', theme === 'dark');
+            html.classList.toggle('light', theme === 'light');
+            toggles.forEach(toggle => {
+                toggle.setAttribute('aria-pressed', toggle.dataset.theme === theme);
+            });
+        };
+
+        setTheme(userThemePreference.theme);
+        toggles.forEach(toggle => toggle.addEventListener('click', () => {
+            const theme = toggle.dataset.theme;
+            if (theme === 'dark') {
                 html.classList.add('dark');
                 html.classList.remove('light');
-                localStorage.setItem('theme', 'dark');
             } else {
                 html.classList.remove('dark');
                 html.classList.add('light');
-                localStorage.setItem('theme', 'light');
             }
-        }, false);
+            localStorage.setItem('theme', theme);
+            setTheme(theme);
+        }, false));
     }, false);
 // @license-end
 </script>
