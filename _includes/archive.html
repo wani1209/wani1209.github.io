@@ -3,9 +3,15 @@
 {% assign category_key = page.category_key | default: page.type %}
 {% assign category_posts = site.categories[category_key] %}
 {% assign category_pages = site.pages | where: "parent_category", page.type %}
+{% assign parent_pages = site.pages | where: "type", page.parent_category %}
+{% assign parent_page = parent_pages | first %}
 <div class="archive">
+  {% if page.parent_category and parent_page %}
+  <a class="archive_parent_button" href="{{ parent_page.url | relative_url }}">&larr; {{ page.parent_category }}</a>
+  {% endif %}
   <p class="archive_type">{{ page.type }}</p>
-  <ul>
+  {% if category_posts.size > 0 %}
+  <ul class="archive_posts">
     {% for post in category_posts %}
     {% if post.url %}
     <li>
@@ -20,14 +26,23 @@
       </li>
     {% endif %}
     {% endfor %}
-    {% for child_page in category_pages %}
-    <li class="archive_subpage">
-      <div class="archive_title">
-        <a href="{{ child_page.url | relative_url }}">{{ child_page.type }}</a>
-      </div>
-    </li>
-    {% endfor %}
   </ul>
+  {% endif %}
+  {% if category_pages.size > 0 %}
+  <div class="archive_pages">
+    <p class="archive_pages_title">Subpages</p>
+    <div class="archive_page_buttons">
+      {% for child_page in category_pages %}
+      {% assign child_key = child_page.category_key | default: child_page.type %}
+      {% assign child_posts = site.categories[child_key] %}
+      <a class="archive_page_button" href="{{ child_page.url | relative_url }}">
+        <span>{{ child_page.type }}</span>
+        <small>{{ child_posts.size | default: 0 }} posts</small>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
 </div>
 
 <!-- main page -->

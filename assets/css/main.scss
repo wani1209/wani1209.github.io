@@ -279,6 +279,46 @@ img {
     margin-bottom: 0.6rem;
 }
 
+.archive_parent_button {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: .45rem .75rem;
+    border: 1px solid var(--archive_title);
+    border-radius: 4px;
+    color: var(--archive_title);
+}
+
+.archive_pages {
+    margin-top: 2rem;
+}
+
+.archive_pages_title {
+    margin-bottom: .75rem;
+    font-weight: bold;
+}
+
+.archive_page_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+}
+
+.archive_page_button {
+    display: flex;
+    flex-direction: column;
+    min-width: 10rem;
+    padding: .85rem 1rem;
+    border: 1px solid var(--archive_title);
+    border-radius: 4px;
+    background: var(--content_bg);
+}
+
+.archive_page_button small {
+    margin-top: .35rem;
+    color: var(--footer_font);
+    font-size: .75rem;
+}
+
 
 /* 3. Header
    ========================================================================== */
@@ -395,6 +435,7 @@ img {
     margin: 0;
     padding: 0;
     list-style: none;
+    text-align: left;
 
     @include mobile-only {
         text-align: center;
@@ -435,25 +476,27 @@ img {
 }
 
 .nav_item.has_children {
-    display: flex;
-    align-items: flex-start;
-    gap: .25rem;
+    display: block;
 }
 
 .nav_children {
     display: inline-block;
+    margin-left: .25rem;
+    vertical-align: middle;
 
     summary {
         color: var(--nav_font);
         cursor: pointer;
         font-size: 90%;
+        line-height: 1;
     }
 }
 
 .nav_sublist {
     list-style: none;
     margin: .25rem 0 0;
-    padding-left: 1rem;
+    padding-left: 1em;
+    text-align: left;
 }
 
 .nav_subitem {
