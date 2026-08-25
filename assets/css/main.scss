@@ -360,9 +360,9 @@ img {
 }
 
 .theme_changer {   
-    position: fixed;
+    position: absolute;
     left: 1rem;
-    bottom: 1rem;
+    top: 1rem;
     z-index: 10;
     display: flex;
     gap: .75rem;
