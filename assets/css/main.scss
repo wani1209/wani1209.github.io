@@ -436,6 +436,7 @@ img {
     margin: 0;
     padding: 0;
     list-style: none;
+    width: 100%;
     text-align: center;
 
     @include mobile-only {
@@ -482,6 +483,7 @@ img {
     @include mobile-only {
         display: block;
         margin: -.5rem;
+        width: 100%;
     }
 
     @include breakpoint(medium) {

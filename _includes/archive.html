@@ -10,6 +10,20 @@
   <a class="archive_parent_button" href="{{ parent_page.url | relative_url }}">&larr; {{ page.parent_category }}</a>
   {% endif %}
   <p class="archive_type">{{ page.type }}</p>
+  {% if category_pages.size > 0 %}
+  <div class="archive_pages">
+    <div class="archive_page_buttons">
+      {% for child_page in category_pages %}
+      {% assign child_key = child_page.category_key | default: child_page.type %}
+      {% assign child_posts = site.categories[child_key] %}
+      <a class="archive_page_button" href="{{ child_page.url | relative_url }}">
+        <span>{{ child_page.type }}</span>
+        <small>{{ child_posts.size | default: 0 }} posts</small>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
   {% if category_posts.size > 0 %}
   <ul class="archive_posts">
     {% for post in category_posts %}
@@ -27,20 +41,6 @@
     {% endif %}
     {% endfor %}
   </ul>
-  {% endif %}
-  {% if category_pages.size > 0 %}
-  <div class="archive_pages">
-    <div class="archive_page_buttons">
-      {% for child_page in category_pages %}
-      {% assign child_key = child_page.category_key | default: child_page.type %}
-      {% assign child_posts = site.categories[child_key] %}
-      <a class="archive_page_button" href="{{ child_page.url | relative_url }}">
-        <span>{{ child_page.type }}</span>
-        <small>{{ child_posts.size | default: 0 }} posts</small>
-      </a>
-      {% endfor %}
-    </div>
-  </div>
   {% endif %}
 </div>
 
