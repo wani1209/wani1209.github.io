@@ -22,7 +22,7 @@ cusdis:
 user:
   name: wani1209.github.io
   pic: /assets/img/profile.JPG
-  picAlt: "Wani blog"
+  picAlt: "wani1209.github.io"
   job: 
   aboutme: true # comment this out if you don't need the 'about' page.
 
