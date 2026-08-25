@@ -1,9 +1,10 @@
 <!-- each category page -->
 {% if page.type %}
+{% assign category_key = page.category_key | default: page.type %}
 <div class="archive">
   <p class="archive_type">{{ page.type }}</p>
   <ul>
-    {% for post in site.categories[page.type] %}
+    {% for post in site.categories[category_key] %}
     {% if post.url %}
     <li>
         <time class='archive_date' datetime='{{ post.date | date_to_xmlschema }}'>
