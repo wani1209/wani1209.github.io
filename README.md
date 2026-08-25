@@ -30,6 +30,20 @@ type: *name*
 ```
 Then the number of pages in the category will be displayed.
 
+Posts can be organized in matching subdirectories under `_posts`:
+
+```text
+_posts/
+	Project/
+		2026-08-25-project.md
+		Capstone/
+			2026-08-25-project1-example.md
+	Papers/
+		2026-08-25-test.md
+```
+
+The category pages in `categories` are display pages; post files belong under `_posts`.
+
 ## License
 
 [MIT License](https://opensource.org/licenses/MIT)
