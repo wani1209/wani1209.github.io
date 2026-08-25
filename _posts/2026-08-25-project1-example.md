@@ -1,6 +1,6 @@
 ---
-title: Project1 예시 포스트
-categories: [Project1]
+title: Capstone 예시 포스트
+categories: [Capstone]
 comments: true
 ---
 
