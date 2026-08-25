@@ -1,6 +1,6 @@
 ---
 title: Capstone 예시 포스트
-categories: [Capstone]
+categories: [Project, Capstone]
 comments: true
 ---
 

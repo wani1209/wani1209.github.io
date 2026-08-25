@@ -43,6 +43,8 @@ _posts/
 ```
 
 The category pages in `categories` are display pages; post files belong under `_posts`.
+Post URLs include the categories defined in front matter, so use `[Project, Capstone]`
+for a nested category URL such as `/project/capstone/post-name/`.
 
 ## License
 
