@@ -254,7 +254,7 @@ img {
 
 .archive_date {
     color: var(--footer_font, #858585);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
 
     @include breakpoint(medium) {
@@ -579,7 +579,7 @@ img {
 
 .post_date {
     color: var(--post_date);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     letter-spacing: -0.5px;
     line-height: 1;
 }
