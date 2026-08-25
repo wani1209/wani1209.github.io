@@ -37,30 +37,23 @@
         console.clear();
 
         const userThemePreference = themePreference();
-        const toggles = document.querySelectorAll('[theme_toggle]');
+        const toggle = document.querySelector('[theme_toggle]');
         const html = document.documentElement;
 
         const setTheme = theme => {
-            html.classList.toggle('dark', theme === 'dark');
-            html.classList.toggle('light', theme === 'light');
-            toggles.forEach(toggle => {
-                toggle.setAttribute('aria-pressed', toggle.dataset.theme === theme);
-            });
+            const activeTheme = theme === 'dark' ? 'dark' : 'light';
+            html.classList.toggle('dark', activeTheme === 'dark');
+            html.classList.toggle('light', activeTheme === 'light');
+            toggle.textContent = activeTheme === 'dark' ? 'Light mode' : 'Dark mode';
+            toggle.setAttribute('aria-label', `Switch to ${activeTheme === 'dark' ? 'light' : 'dark'} mode`);
         };
 
         setTheme(userThemePreference.theme);
-        toggles.forEach(toggle => toggle.addEventListener('click', () => {
-            const theme = toggle.dataset.theme;
-            if (theme === 'dark') {
-                html.classList.add('dark');
-                html.classList.remove('light');
-            } else {
-                html.classList.remove('dark');
-                html.classList.add('light');
-            }
+        toggle.addEventListener('click', () => {
+            const theme = html.classList.contains('dark') ? 'light' : 'dark';
             localStorage.setItem('theme', theme);
             setTheme(theme);
-        }, false));
+        }, false);
     }, false);
 // @license-end
 </script>

@@ -346,7 +346,7 @@ img {
 .header_name {
     display: block;
     color: var(--name_font);
-    font-size: 1.5em;
+    font-size: calc(1.5em - 3pt);
 }
 
 .header_job {
@@ -367,15 +367,14 @@ img {
 
     button {
         border: 0;
-        padding: .35rem 0;
+        padding: 0;
         background: transparent;
         color: var(--footer_font, var(--post_text));
         cursor: pointer;
         font: inherit;
         font-size: .8rem;
 
-        &:hover,
-        &[aria-pressed='true'] {
+        &:hover {
             color: var(--post_link);
             text-decoration: underline;
         }
