@@ -7,7 +7,7 @@
     </li>
 
     {% endif %}
-    {% assign category_pages = site.pages | where_exp: "page", "page.path contains 'categories/'" %}
+    {% assign category_pages = site.pages | where_exp: "page", "page.type" %}
     {% assign top_category_pages = category_pages | where_exp: "page", "page.parent_category == nil" %}
     {% for category_page in top_category_pages %}
     {% assign cat_name = category_page.type %}
