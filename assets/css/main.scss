@@ -264,8 +264,8 @@ img {
 
 .archive_title {
     word-wrap: normal;
-    font-size: 0.9rem;
-    font-weight: 700;
+    font-size: 0.95rem;
+    font-weight: normal;
 
     @include breakpoint(medium) {
         max-width: 80%;
@@ -297,7 +297,9 @@ img {
 
 .archive_parent_button {
     display: inline-block;
-    margin-bottom: 1rem;
+    position: absolute;
+    top: 4rem;
+    margin-left: -2rem;
     padding: .45rem .75rem;
     border: 1px solid var(--archive_title);
     border-radius: 4px;
@@ -558,13 +560,13 @@ img {
 
 .post_title {
     color: var(--post_title);
-    font-size: 0.9rem;
+    font-size: 1.6rem;
     line-height: 2.2rem;
     font-weight: 700;
 
     @include mobile-only {
         text-align: center;
-        font-size: 0.9rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -579,7 +581,7 @@ img {
 }
 
 .post_date {
-    color: var(--post_date);
+    color: var(--footer_font, #858585);
     font-size: 0.8rem;
     letter-spacing: -0.5px;
     line-height: 1;
