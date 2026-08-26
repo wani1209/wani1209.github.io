@@ -264,6 +264,7 @@ img {
 
 .archive_title {
     word-wrap: normal;
+    font-size: 0.9rem;
     font-weight: 700;
 
     @include breakpoint(medium) {
@@ -557,13 +558,13 @@ img {
 
 .post_title {
     color: var(--post_title);
-    font-size: 1.8rem;
+    font-size: 0.9rem;
     line-height: 2.2rem;
     font-weight: 700;
 
     @include mobile-only {
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 0.9rem;
     }
 }
 
