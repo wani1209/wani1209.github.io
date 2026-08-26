@@ -8,5 +8,5 @@ wani1209.github.io
 ----
 * 주제: 논문 리뷰, 프로젝트 기록, Pytorch 등
 
-* 테마: catbook(커스텀 중)
+* 테마: catbook(커스텀 중) 
 
