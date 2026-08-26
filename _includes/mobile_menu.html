@@ -8,7 +8,7 @@
 
     {% endif %}
     {% assign category_pages = site.pages | where_exp: "page", "page.path contains 'categories/'" %}
-    {% assign top_category_pages = category_pages | where_exp: "page", "page.parent_category == nil or page.parent_category == ''" %}
+    {% assign top_category_pages = category_pages | where_exp: "page", "page.parent_category == nil" %}
     {% for category_page in top_category_pages %}
     {% assign cat_name = category_page.type %}
     {% assign cat_link = category_page.permalink | default: category_page.url %}
